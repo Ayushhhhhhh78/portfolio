@@ -37,6 +37,7 @@ hr{
     flex-direction: column;
     color:#fff;
     left:-40vw;
+    z-index: 1000;
 }
 .nav-for-port span{
     font-weight: bold;
