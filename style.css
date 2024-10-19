@@ -1,0 +1,299 @@
+*{
+    margin:0;
+    /* padding: 0; */
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+body{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #222629;
+    padding: 3%;
+}
+h2{
+    color:#86c232;
+    font-weight: bold;
+}
+hr{
+    border-color: white !important;
+}
+/********** navbar ************/
+.nav-for-port{
+    position: absolute;
+    display: none !important;
+    background-color: #61892f;
+    display: flex;
+    width: 40vw;
+    height: 100vh;
+    border-bottom-right-radius:20px ;
+    border-top-right-radius:20px ;
+    padding:0;
+    flex-direction: column;
+    color:#fff;
+    left:-40vw;
+}
+.nav-for-port span{
+    font-weight: bold;
+    font-size: larger;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 2px solid transparent;
+    align-items: center;
+    justify-content: center;
+}
+.nav-for-port span:hover{
+    border:2px solid #fff;
+}
+.portnav-on{
+    animation-name: anime-on;
+    animation-duration: 0.2s ;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.portnav-off{
+    animation-name:anime-off;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes anime-off {
+    from{left:0}
+    to{left:-40vw}
+}
+@keyframes anime-on {
+    from{left:-40vw}
+    to{left:0}
+}
+.navbar{
+    position: absolute;
+    top:0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 40vw;
+    /* padding-right: 5px; */
+    /* padding-top: 8px;
+    padding-bottom: 8px; */
+    background-color: #61892f;
+    color: #fff;
+    border-bottom-left-radius:20px ;
+    border-bottom-right-radius:20px ;
+}
+.navspan{
+    font-weight: bold;
+    font-size: larger;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    border: 2px solid transparent;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.navspan:hover{
+    border:2px solid #fff;
+}
+.menu{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 100;
+    cursor: pointer;
+    margin-top: 3px;
+    margin-left: 3px;
+    display: none;
+}
+.menu:hover{
+    opacity: 0.8;
+}
+/********* navbar end********/
+
+/*****content********/
+.content{
+    margin-top: 60px;
+    /* width:100vw; */
+}
+/*****content********/
+
+/********** profile ********/
+.profile{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.pic img{
+    border-radius: 50%;
+}
+/********** profile end ********/
+
+/******about me********/
+ul li:nth-child(1)::marker{
+    content: url('images/hi.png');
+}
+ul li:nth-child(2)::marker{
+    content: url('images/working.png');
+}
+ul li:nth-child(3)::marker{
+    content: url('images/search.png');
+}
+ul li:nth-child(4)::marker{
+    content: url('images/learning.png');
+}
+ul li:nth-child(5)::marker{
+    content: url('images/contact.png');
+}
+ul li:nth-child(6)::marker{
+    content: url('images/bulb.png');
+}
+li{
+    padding-left: 7px;
+    color:#9a959e;
+    /* border:2px solid red; */
+}
+ul li p {
+    /* border:2px solid green; */
+    display: inline-block;
+    position: relative;
+    top:-5px;
+}
+/******about me end********/
+
+/*********projects*********/
+.projects{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
+.projects div img{
+    width: 100% !important;
+    filter:blur(7px);
+}
+.projects div a{
+    display: inline-block;
+    width:100%;
+    border:2px solid #86c232 !important;
+    text-align: center;
+    text-decoration: none;
+    color: #86c232;
+    font-size: large;
+    transition-duration: 500ms ;
+    background-color: transparent;
+    border-radius: 2px;
+}
+.projects div a:hover{
+    color:#fff;
+    background-color: #86c232;
+}
+/*********projects end*********/
+
+/****contact and more****/
+.more a{
+    text-decoration: none;
+    color: #fff;
+    font-size: large;
+    font-weight: normal;
+    transition-duration:500ms;
+}
+.contact a{
+    text-decoration: none;
+    color: #fff;
+    font-size: large;
+    font-weight: normal;
+    transition-duration:500ms; 
+}
+.contact a:hover{
+    color:#86c232
+}
+.more a:hover{
+    color:#86c232
+}
+.more{
+    box-sizing: content-box;
+    padding-bottom: 4%;
+}
+/****contact and more end****/
+
+
+
+
+
+
+
+/* media query */
+@media only screen and (max-width:930px){
+    .profile{
+        display: flex;
+        justify-content: space-between  !important;
+    }
+    .userd{
+        width: 70%;
+    }
+    .userbio{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media only screen and (max-width:780px){
+    .navbar{
+        padding-left: 0;
+    }
+}
+@media only screen and (max-width:509px){
+    .userd{
+        width: 90%;
+    }
+    .projects{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media only screen and (max-width:476px){
+    .navbar{
+        display: none;
+    }
+    .nav-for-port{
+        display: flex !important;
+    }
+    .menu{
+        display: flex;
+    }
+    .profile{
+        flex-direction: column;
+    }
+    .userbio{
+        align-items: center;
+        justify-content: center;
+    }
+    .userd{
+        text-align: center !important;
+    }
+}
+@media only screen and (max-width:360px){
+    .nav-for-port{
+        width:65vw;
+        left:-65vw;
+    }
+    @keyframes anime-off {
+        from{left:0}
+        to{left:-65vw}
+    }
+    @keyframes anime-on {
+        from{left:-65vw}
+        to{left:0}
+    }
+}
+/* media query end*/
