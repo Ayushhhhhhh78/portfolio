@@ -1,58 +1,103 @@
-let menu_bar = document.getElementsByClassName('menu')[0]
-let portnaav = document.getElementsByClassName('nav-for-port')[0]
-let widthofnav = portnaav.offsetWidth;
-// console.log(widthofnav)
-let menu = () => {
-    let source = menu_bar.getAttribute('src');
-    if(source == 'images/menu-g.png'){
-        menu_bar.setAttribute('src', 'images/menu-w.png')
-        portnaav.classList.remove('portnav-off')
-        portnaav.classList.add('portnav-on')
-        setTimeout(() => {
-            portnaav.style.cssText = 'left:0';
-        }, 200)
-    }else{
-        menu_bar.setAttribute('src', 'images/menu-g.png')  
-        portnaav.classList.remove('portnav-on')
-        portnaav.classList.add('portnav-off')
-        if(window.innerWidth > 360){
-            setTimeout(() => {
-                portnaav.style.cssText = `left:-40vw`;
-            }, 200)
-        }else{
-            setTimeout(() => {
-                portnaav.style.cssText = `left:-65vw`;
-            }, 200)
-        }
-        
+// ===== Responsive Sidebar & Mobile Nav =====
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+if (mobileMenuBtn && mobileNav) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('show');
+    mobileMenuBtn.setAttribute('aria-expanded', mobileNav.classList.contains('show'));
+  });
+
+  // Close mobile nav on link click
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('show');
+      mobileMenuBtn.setAttribute('aria-expanded', "false");
+    });
+  });
+
+  // Close mobile nav on outside click
+  document.addEventListener('click', (e) => {
+    if (
+      mobileNav.classList.contains('show') &&
+      !mobileNav.contains(e.target) &&
+      !mobileMenuBtn.contains(e.target)
+    ) {
+      mobileNav.classList.remove('show');
+      mobileMenuBtn.setAttribute('aria-expanded', "false");
     }
+  });
+
+  // ESC key closes mobile nav
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape" && mobileNav.classList.contains('show')) {
+      mobileNav.classList.remove('show');
+      mobileMenuBtn.setAttribute('aria-expanded', "false");
+    }
+  });
 }
 
+// ===== Scroll-to-Top Button =====
+const scrollBtn = document.querySelector('.scroll-to-top');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 220) {
+    scrollBtn?.classList.add('visible');
+  } else {
+    scrollBtn?.classList.remove('visible');
+  }
+});
+scrollBtn?.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-//scrolling functions - 
-let scAbout = document.getElementsByClassName('about')[0].offsetTop - 100;
-let scrollToAbout = function(){
-    window.scrollTo({ top: scAbout, behavior: 'smooth'});
-}
+// ===== Smooth Scroll for Anchor Links =====
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const hash = this.getAttribute('href');
+    if (hash && hash.length > 1) {
+      const target = document.querySelector(hash);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
 
-let scProjects = document.getElementsByClassName('projects')[0].offsetTop - 100;
-let scrollToProjects = function(){
-    window.scrollTo({ top: scProjects, behavior: 'smooth'});
+// ===== Highlight Active Sidebar Link on Scroll =====
+const sectionIds = ["about", "projects", "techstack", "contact", "more"];
+const sidebarLinks = document.querySelectorAll('.sidebar-link');
+function setActiveSidebarLink() {
+  let found = false;
+  for (let i = sectionIds.length - 1; i >= 0; i--) {
+    const section = document.getElementById(sectionIds[i]);
+    if (section && window.scrollY + 120 >= section.offsetTop) {
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      const activeLink = Array.from(sidebarLinks).find(link => link.getAttribute('href').includes(sectionIds[i]));
+      if (activeLink) activeLink.classList.add('active');
+      found = true;
+      break;
+    }
+  }
+  if (!found) sidebarLinks.forEach(link => link.classList.remove('active'));
 }
+window.addEventListener('scroll', setActiveSidebarLink);
+window.addEventListener('DOMContentLoaded', setActiveSidebarLink);
 
-let scTechStack = document.getElementsByClassName('techStack')[0].offsetTop + 500;
-let scrollToTeachStack = function(){
-    window.scrollTo({ top: scTechStack, behavior: 'smooth'});
-}
-
-let scContact = document.getElementsByClassName('contact')[0].offsetTop + 500;
-let scrollToContact = function(){
-    window.scrollTo({ top: scContact, behavior: 'smooth'});
-}
-
-let scMore = document.getElementsByClassName('more')[0].offsetTop +500;
-let scrollToMore = function(){
-    window.scrollTo({ top: scMore, behavior: 'smooth'});
-    // window.scrollTo(0,scroll.body.scrollHeight)
-}
-//scrolling functions end 
+// ===== Card Animation on Scroll (simple fade-in) =====
+const animatedCards = document.querySelectorAll('.card, .project-card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "none";
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+animatedCards.forEach(card => {
+  card.style.opacity = 0;
+  card.style.transform = "translateY(40px)";
+  observer.observe(card);
+});
