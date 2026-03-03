@@ -1,141 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="description" content="Ayush Verma - Full Stack Developer Portfolio.">
-  <title>Ayush Verma - Portfolio</title>
-  <!-- Modern Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon/favicon-32x32.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="layout">
-    <!-- Sidebar Navigation (Desktop) -->
-    <aside class="sidebar">
-      <div class="sidebar-profile">
-        <img src="images/android-icon-192x192.png" alt="Ayush Verma" class="sidebar-img" />
-        <h1 class="sidebar-name">Ayush Verma</h1>
-        <p class="sidebar-title">Student Of Computer Science</p>
-      </div>
-      <nav class="sidebar-nav">
-        <a href="#about" class="sidebar-link"><i class="fa fa-user"></i> <span>About</span></a>
-        <a href="#projects" class="sidebar-link"><i class="fa fa-code"></i> <span>Projects</span></a>
-        <a href="#techstack" class="sidebar-link"><i class="fa fa-cubes"></i> <span>Tech Stack</span></a>
-        <a href="#contact" class="sidebar-link"><i class="fa fa-paper-plane"></i> <span>Contact</span></a>
-        <a href="#more" class="sidebar-link"><i class="fa fa-ellipsis-h"></i> <span>More</span></a>
-      </nav>
-      <div class="sidebar-footer">
-        <a href="https://github.com/Ayushhhhhhh78" target="_blank" rel="noopener" class="sidebar-icon"><i class="fab fa-github"></i></a>
-        <a href="https://x.com/AyushV72" target="_blank" rel="noopener" class="sidebar-icon"><i class="fab fa-x-twitter"></i></a>
-        <a href="mailto:ayushlogins192@gmail.com" class="sidebar-icon"><i class="fa fa-envelope"></i></a>
-      </div>
-    </aside>
-    <!-- Topbar/Hamburger for Mobile -->
-    <header class="mobile-header">
-      <div class="mobile-header-content">
-        <img src="images/android-icon-192x192.png" alt="Ayush Verma" class="mobile-logo">
-        <span class="mobile-name">Ayush Verma</span>
-        <button class="mobile-menu-btn" aria-label="Open menu"><i class="fa fa-bars"></i></button>
-      </div>
-      <nav class="mobile-nav">
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#projects" class="mobile-link">Projects</a>
-        <a href="#techstack" class="mobile-link">Tech Stack</a>
-        <a href="#contact" class="mobile-link">Contact</a>
-        <a href="#more" class="mobile-link">More</a>
-      </nav>
+    <header class="hero">
+        <h1>Welcome to My Professional Portfolio</h1>
+        <p>I am a freelancer focused on delivering high-quality services for my clients.</p>
+        <p>Recruiters, feel free to explore my projects and skills!</p>
+        <a href="#contact" class="btn">Contact Me</a>
     </header>
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Hero Section -->
-      <section class="card hero-card" id="hero">
-        <img src="images/android-icon-192x192.png" class="hero-img" alt="Ayush Verma" />
-        <div class="hero-text">
-          <h2>Ayush Verma</h2>
-          <p>Just a beetle finding bugs from India and has been distracted by these computer things...</p>
-        </div>
-      </section>
-      <!-- About Section -->
-      <section class="card" id="about">
-        <h2>About Me</h2>
-        <ul class="about-list">
-          <li>Hi, I'm Ayush</li>
-          <li>Currently working on JWT user authentication portal, MongoDB Atlas and exploring multiple useful APIs.</li>
-          <li>I'm looking to collaborate on the backend of projects.</li>
-          <li>Learning GenAI currently.</li>
-          <li>Reach me out through X, Instagram and other social media I mentioned below.</li>
-        </ul>
-      </section>
-      <!-- Projects Section -->
-      <section class="card" id="projects">
+
+    <section class="project-categories">
         <h2>Projects</h2>
-        <div class="projects-grid">
-          <a class="project-card" href="https://github.com/Ayushhhhhhh78/hotel-demo" target="_blank" rel="noopener">
-            <span>Hotel Site</span>
-          </a>
-          <a class="project-card" href="https://github.com/Ayushhhhhhh78/confession.git" target="_blank" rel="noopener">
-            <span>Confession Page</span>
-          </a>
-          <a class="project-card" href="https://github.com/Ayushhhhhhh78/Whake-A-Mole" target="_blank" rel="noopener">
-            <span>Whack A Mole</span>
-          </a>
-          <a class="project-card" href="https://github.com/Ayushhhhhhh78/Tik-Tak-Toe" target="_blank" rel="noopener">
-            <span>Tic Tac Toe</span>
-          </a>
-          <a class="project-card" href="https://github.com/Ayushhhhhhh78/Random-Pass-generator" target="_blank" rel="noopener">
-            <span>Demanding Password Generator</span>
-          </a>
-          <a class="project-card" href="https://github.com/Ayushhhhhhh78/short-url-generator" target="_blank" rel="noopener">
-            <span>Short URL Generator and User Tracker</span>
-          </a>
-          <a class="project-card" href="https://github.com/Ayushhhhhhh78/Snake-Game" target="_blank" rel="noopener">
-            <span>Snakopia</span>
-          </a>
+        <div class="projects">
+            <div class="business-projects">
+                <h3>Business Projects</h3>
+                <ul>
+                    <li>Project A - Description</li>
+                    <li>Project B - Description</li>
+                    <!-- Add more business projects here -->
+                </ul>
+            </div>
+            <div class="technical-projects">
+                <h3>Technical Projects</h3>
+                <ul>
+                    <li>Project X - Description</li>
+                    <li>Project Y - Description</li>
+                    <!-- Add more technical projects here -->
+                </ul>
+            </div>
         </div>
-      </section>
-      <!-- Tech Stack Section -->
-      <section class="card" id="techstack">
-        <h2>Tech Stack</h2>
-        <div class="techstack-list">
-          <img src="https://img.shields.io/badge/html5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-          <img src="https://img.shields.io/badge/css3-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-          <img src="https://img.shields.io/badge/javascript-%23F7DF1E.svg?&style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-          <img src="https://img.shields.io/badge/node.js-%23339933.svg?&style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
-          <img src="https://img.shields.io/badge/express.js-%23404d59.svg?&style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
-          <img src="https://img.shields.io/badge/mongodb-%2347A248.svg?&style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxHgLHGJvdLDvEwd6IikTlnzTkAP6Z3PodRA&s" alt="EJS" style="height:32px;" />
-          <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
-          <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
-          <img src="https://img.shields.io/badge/jwt-black?style=for-the-badge&logo=JSON%20web%20tokens" alt="JWT" />
-          <img src="https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white" alt="Yarn" />
-        </div>
-      </section>
-      <!-- Contact Section -->
-      <section class="card" id="contact">
-        <h2>Connect With Me</h2>
-        <div class="contact-list">
-          <a href="https://x.com/AyushV72" target="_blank" rel="noopener" class="contact-link"><i class="fab fa-x-twitter"></i> @AyushV72</a>
-          <a href="https://stackoverflow.com/users/23542412/aayush-verma" target="_blank" rel="noopener" class="contact-link"><i class="fab fa-stack-overflow"></i> user:23542412</a>
-          <a href="https://github.com/Ayushhhhhhh78" target="_blank" rel="noopener" class="contact-link"><i class="fab fa-github"></i> @Ayushhhhhhh78</a>
-          <a href="https://www.instagram.com/a_y_u_s_h__72/" target="_blank" rel="noopener" class="contact-link"><i class="fab fa-instagram"></i> @a_y_u_s_h__72</a>
-          <a href="mailto:ayushlogins192@gmail.com" class="contact-link"><i class="fa fa-envelope"></i> ayushlogins192@gmail.com</a>
-        </div>
-      </section>
-      <!-- More Section -->
-      <section class="card" id="more">
-        <h2>Want To Know More?</h2>
-        <div class="contact-list">
-          <a href="https://t.me/Aayush_782" target="_blank" rel="noopener" class="contact-link"><i class="fab fa-telegram"></i> @Aayush_782</a>
-          <a href="https://ngl.link/ayush53109" target="_blank" rel="noopener" class="contact-link"><i class="fa fa-user-secret"></i> Ask me anything (Maybe...)</a>
-        </div>
-      </section>
-    </main>
-  </div>
-  <button class="scroll-to-top" aria-label="Scroll to top"><i class="fa fa-chevron-up"></i></button>
-  <script src="script.js"></script>
+    </section>
+
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Skill 1</li>
+            <li>Skill 2</li>
+            <li>Skill 3</li>
+            <!-- Add more skills here -->
+        </ul>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>If you're interested in working with me, please get in touch!</p>
+        <a href="resume.pdf" class="btn">Download Resume</a>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
 </body>
 </html>
