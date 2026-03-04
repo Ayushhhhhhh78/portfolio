@@ -6,6 +6,7 @@ const mobileLinks = document.querySelectorAll('.mobile-link');
 if (mobileMenuBtn && mobileNav) {
   mobileMenuBtn.addEventListener('click', () => {
     const isOpen = mobileNav.classList.toggle('show');
+    mobileMenuBtn.classList.toggle('open', isOpen);
     mobileMenuBtn.setAttribute('aria-expanded', isOpen);
   });
 
@@ -13,6 +14,7 @@ if (mobileMenuBtn && mobileNav) {
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
       mobileNav.classList.remove('show');
+      mobileMenuBtn.classList.remove('open');
       mobileMenuBtn.setAttribute('aria-expanded', 'false');
     });
   });
@@ -25,6 +27,7 @@ if (mobileMenuBtn && mobileNav) {
       !mobileMenuBtn.contains(e.target)
     ) {
       mobileNav.classList.remove('show');
+      mobileMenuBtn.classList.remove('open');
       mobileMenuBtn.setAttribute('aria-expanded', 'false');
     }
   });
@@ -33,6 +36,7 @@ if (mobileMenuBtn && mobileNav) {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileNav.classList.contains('show')) {
       mobileNav.classList.remove('show');
+      mobileMenuBtn.classList.remove('open');
       mobileMenuBtn.setAttribute('aria-expanded', 'false');
     }
   });
@@ -113,7 +117,7 @@ animatedCards.forEach(card => {
   observer.observe(card);
 });
 
-// ===== Prevent Default on External Links (optional) =====
+// ===== Prevent Default on External Links =====
 document.querySelectorAll('a[target="_blank"]').forEach(link => {
   if (!link.rel.includes('noopener')) {
     link.rel += ' noopener';
